@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    label: Prometheus
+    type: prometheus
+    access: proxy
+    url: prometheus:9090
+  - name: Humio
+    label: Humio
+    type: humio
+    access: proxy
+    url: humio:8008

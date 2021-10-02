@@ -1,0 +1,19 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,jmx,humio
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+      jmx:
+        enabled: true
+      humio:
+        step: 30m
+        api-token: MY_TOKEN
+        uri: http://127.0.0.1:8008
+        enabled: true
+    distribution:
+      percentiles-histogram:
+        "{http.server.requests}": true
